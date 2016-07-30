@@ -1,5 +1,9 @@
 <?php
 include("includes/database-conn.php");
+include("functions/login.php");
+
+// verifica se há sessions ativas para o usuário
+verificaUsuarioLogado();
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
@@ -65,7 +69,7 @@ include('includes/header.php');
 
             <div class="container">
                 <input type="submit" value="Salvar" class="btn btn-success btn-lg">
-                <a href="index.php" class="btn">cancelar</a>
+                <a href="listagem-pessoas.php" class="btn">cancelar</a>
             </div>
         </form>
 

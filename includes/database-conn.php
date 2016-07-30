@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // conexao com o banco de dados
 $pdo = new PDO(

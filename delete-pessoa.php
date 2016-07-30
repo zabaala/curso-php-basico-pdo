@@ -1,5 +1,9 @@
 <?php
 include('includes/database-conn.php');
+include("functions/login.php");
+
+// verifica se há sessions ativas para o usuário
+verificaUsuarioLogado();
 
 $id = $_GET['id'];
 
@@ -10,7 +14,7 @@ $msg = '';
 
 try {
     $query->execute();
-    $location = 'index.php';
+    $location = 'listagem-pessoas.php';
 } catch (PDOException $e) {
     $msg = 'Erro\n' . $e->getMessage();
     $location = 'javascript:history.back()';
